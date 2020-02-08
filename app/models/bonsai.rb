@@ -1,0 +1,2 @@
+class Bonsai < ApplicationRecord
+end
