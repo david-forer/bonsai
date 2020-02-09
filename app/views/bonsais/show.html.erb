@@ -7,25 +7,31 @@
 
             <div class="content pa4 mt3 bg-white border-radius-3">
             
-                <h3 class="subtitle is-4">Type of Bonsai</h3>
+                <h3 class="subtitle is-4">Type of Bonsai:</h3>
                 <%= @bonsai.type_of %>
 
-                <h3 class="subtitle is-4">Price of Bonsai</h3>
+                <h3 class="subtitle is-4">Price of Bonsai:</h3>
                 <%= @bonsai.price %>
          
             <!-- <div class="content pa4 mt3 bg-white border-radius-3"> -->
 
-                <h3 class="subtitle is-4">Description</h3>
+                <h3 class="subtitle is-4">Description:</h3>
                 <%= @bonsai.description %>
 
                 <div class="feature-image">
                     <%= image_tag(@bonsai.image_url(:main)) %>
                 </div>
-                
+                <%= button_to 'Add to cart', bonsais_path(bonsai_id: @bonsai), class: 'button is-large is-warning add-to-cart' %>
             </div>
         </div>
         
     </div>
 
+    <% if bonsai_author(@bonsai) %>
+    <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
+    <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+    <% end %>
+
     
 </section>
+
