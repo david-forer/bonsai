@@ -1,0 +1,30 @@
+<div class="instrument-index-grid pt4">
+    <% @bonsais.each do |bonsai| %>
+
+    <div class="instrument border-light">
+        <div class="instrument-thumb">
+            <%= link_to image_tag(bonsai.image_url(:thumb)), bonsai %>
+
+                <div class="price">
+                        <span class="tag is-dark"><%= bonsai.type_of %></span>
+                </div>
+            
+        </div>
+
+        <div class="pa3">
+
+            <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
+
+            <p class="has-text-gray fg pt1">Sold by <%= bonsai.user.name %></p>
+
+            <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
+
+            <% if bonsai_author(bonsai) %>
+            <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
+            <%= link_to 'Delete', bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+            <% end %>
+
+        </div>
+    </div>
+    <% end %>
+</div>

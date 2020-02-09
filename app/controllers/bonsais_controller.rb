@@ -37,6 +37,26 @@ class BonsaisController < ApplicationController
         
     end
 
+    def update 
+        respond_to do |format|
+            if @bonsai.save
+                format.html { redirect_to @bonsai, notice: 'Your Bonsai was successfully updated.' }
+                format.json { render :show, status: :created, location: @bonsai }
+            else
+                format.html { render :new }
+                format.json { render json: @bonsai.errors, status: :unprocessable_entity }
+            end
+        end
+    end
+
+    def destroy
+    @bonsai.destroy
+    respond_to do |format|
+      format.html { redirect_to bonsais_url, notice: 'Bonsai was successfully repotted elsewhere.' }
+      format.json { head :no_content }
+    end
+  end
+
     private
 
     def set_bonsai
