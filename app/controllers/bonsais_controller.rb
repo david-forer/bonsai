@@ -22,7 +22,30 @@ class BonsaisController < ApplicationController
     end
 
     def create
+
+        @bonsai = current_user.bonsais.build(bonsai_params)
+
+        respond_to do |format|
+            if @bonsai.save
+                format.html { redirect_to @bonsai, notice: 'Your Bonsai was successfully created.' }
+                format.json { render :show, status: :created, location: @bonsai }
+            else
+                format.html { render :new }
+                format.json { render json: @bonsai.errors, status: :unprocessable_entity }
+            end
+        end
         
+    end
+
+    private
+
+    def set_bonsai
+        @bonsai = Bonsai.find(params[:id])
+    end
+
+    def bonsai_params
+        params.require(:bonsai).permit(:name, :type_of, :description, :price, :rating, :image )
+    
     end
 
 
