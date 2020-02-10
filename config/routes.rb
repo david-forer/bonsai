@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bonsai_items
   resources :carts
   resources :bonsais
   devise_for :users, controllers: {

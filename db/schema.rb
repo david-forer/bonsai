@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_064526) do
+ActiveRecord::Schema.define(version: 2020_02_09_141151) do
+
+  create_table "bonsai_items", force: :cascade do |t|
+    t.integer "bonsai_id", null: false
+    t.integer "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bonsai_id"], name: "index_bonsai_items_on_bonsai_id"
+    t.index ["cart_id"], name: "index_bonsai_items_on_cart_id"
+  end
 
   create_table "bonsais", force: :cascade do |t|
     t.string "name"
@@ -23,6 +32,11 @@ ActiveRecord::Schema.define(version: 2020_02_09_064526) do
     t.string "image"
     t.integer "user_id"
     t.string "type_of"
+  end
+
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +52,6 @@ ActiveRecord::Schema.define(version: 2020_02_09_064526) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bonsai_items", "bonsais"
+  add_foreign_key "bonsai_items", "carts"
 end
