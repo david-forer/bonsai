@@ -1,5 +1,6 @@
 class Bonsai < ApplicationRecord
-
+    before_destroy :not_referenced_by_any_bonsai_item
+    
     mount_uploader :image, ImageUploader
     serialize :image, JSON
 
@@ -11,5 +12,14 @@ class Bonsai < ApplicationRecord
 
 
     TYPE = %w{ Outdoor Indoor Beginner Flowering DYI }
+
+    private
+
+    def not_referenced_by_any_bonsai_item
+        unless bonsai_items.empty?
+            errors.add(:base, "Bonsai items present")
+            throw :abort
+        end
+    end
 
 end
