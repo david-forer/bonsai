@@ -13,8 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_02_10_072802) do
 
   create_table "bonsai_items", force: :cascade do |t|
-    t.integer "bonsai_id"
-    t.integer "cart_id"
+    t.integer "bonsai_id", null: false
+    t.integer "cart_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "quantity", default: 1

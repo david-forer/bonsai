@@ -18,9 +18,14 @@
                 <h3 class="subtitle is-4">Description:</h3>
                 <%= @bonsai.description %>
 
-                <div class="feature-image">
-                    <%= image_tag(@bonsai.image_url(:main)) %>
-                </div>
+                
+                    <div class="feature-image">
+                    <% if @bonsai.image_url %>
+                        <%= image_tag(@bonsai.image_url(:main)) %>
+                    <% end %>
+                    </div>
+                
+                
                 <%= button_to 'Add to cart', bonsais_path(bonsai_id: @bonsai), class: 'button is-large is-warning add-to-cart' %>
             </div>
         </div>
