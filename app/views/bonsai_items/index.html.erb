@@ -1,0 +1,27 @@
+<h1>Bonsai Items</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Bonsai</th>
+            <th>Cart</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @bonsai_items.each do |bonsai_item| %>
+        <tr>
+            <td><%= bonsai_item.bonsai %></td>
+            <td><%= bonsai_item.cart %></td>
+            <td><%= link_to 'Show', bonsai_item %></td>
+            <td><%= link_to 'Edit', edit_bonsai_item_path(bonsai_item) %></td>
+            <td><%= link_to 'Destroy', bonsai_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bonsai Item', new_bonsai_item_path %>

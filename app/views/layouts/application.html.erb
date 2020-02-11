@@ -6,7 +6,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    
+   
   </head>
   <body class="<%= yield (:body_class) %>">
     <% if flash[:notice] %>
@@ -34,7 +36,18 @@
       <div id="navbar" class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <div class="field is-grouped">   
+            <div class="field is-grouped"> 
+              <% if total_cart_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart
+                <%= cart_count_over_one %>
+              </span>
+              <% end %>
+              <% end %>
+              
               <% if user_signed_in? %>
               
               <%= link_to 'Sell a Bonsai', new_bonsai_path, class: "navbar-item button is-dark" %>
