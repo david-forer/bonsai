@@ -4,17 +4,18 @@ before_action :find_bonsai
 
     def new 
         @review = Review.new
+        @user = User.new
     end
 
     def create 
-        @review = review.new(review_params)
+        @review = Review.new(review_params)
         @review.bonsai_id = @bonsai.id
-        @review.user_id = current_user.id
+        # @review.user_id = current_user.id
 
         if @review.save
-            redirect_to bonsai_path(@bonsai)
+            redirect_to review_bonsai_path(@bonsai)
         else
-            render :root_path
+            redirect_to root_path
         end
     end
 
