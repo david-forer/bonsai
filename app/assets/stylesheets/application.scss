@@ -26,18 +26,19 @@
   margin-bottom: 0;
 }
 
-.instrument-index-grid {
+.bonsai-index-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  grid-gap: 1em;
 
   .bonsai {
     border-left: 0;
     border-top: 0;
     position: relative;
-    min-height: 375px;
+    min-height: 350px;
 
     .title {
-      line-height: 1.6rem;
+      line-height: 1.8rem;
     }
     .price {
       position: absolute;
@@ -46,23 +47,26 @@
     }
   }
 
-  .instrument-thumb {
-    position: relative;
-    max-height: 150px;
+  .bonsai-thumb {
+    position: center;
+    max-height: 200px;
     overflow: hidden;
 
     img {
-      max-width: 100%;
-      width: 100%;
+      max-width: 40%;
+      width: 40%;
       &:hover {
         opacity: .9;
       }
     }
-
-    .condition {
-      position: absolute;
-      bottom: 10px;
-      right: 9px;
-    }
+  
+  //   .condition {
+  //     position: absolute;
+  //     bottom: 10px;
+  //     right: 9px;
+  //   }
   }
+
+
+
 }

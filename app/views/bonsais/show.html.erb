@@ -24,9 +24,14 @@
                         <%= image_tag(@bonsai.image_url(:main)) %>
                     <% end %>
                     </div>
+                <% if @cart.include?(@bonsai) %>
+                <p>Bonsai is in Cart.</p>
+                <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
+                <% else %>
+                <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post,  class: 'button is-large is-warning add-to-cart' %>
+                <% end %>
                 
-                
-                <%= button_to 'Add to cart', bonsais_path(bonsai_id: @bonsai), class: 'button is-large is-warning add-to-cart' %>
+                <!-- <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post  %> -->
             </div>
         </div>
         

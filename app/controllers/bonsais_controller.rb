@@ -1,7 +1,8 @@
 class BonsaisController < ApplicationController
+    before_action :initialize_session
     before_action :set_bonsai, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, except: [:index, :show]
-
+    before_action :load_cart
    
 
     def index 
@@ -50,14 +51,23 @@ class BonsaisController < ApplicationController
     end
 
     def destroy
-    @bonsai.destroy
-    respond_to do |format|
-      format.html { redirect_to bonsais_url, notice: 'Bonsai was successfully repotted elsewhere.' }
-      format.json { head :no_content }
+        @bonsai.destroy
+            respond_to do |format|
+            format.html { redirect_to bonsais_url, notice: 'Bonsai was successfully repotted elsewhere.' }
+            format.json { head :no_content }
+            end
     end
-  end
+
+   
 
     private
+
+    def initialize_session
+        session[:cart] ||= []
+    end
+    def load_cart 
+        @cart = Bonsai.find(session[:cart])
+    end
 
     def set_bonsai
         @bonsai = Bonsai.find(params[:id])
