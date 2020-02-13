@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   get 'static_pages/help'
   # resources :bonsai_items
   # resources :carts
-  resources :bonsais
+  resources :bonsais do
+    resources :reviews
+  end
+
   devise_for :users, controllers: {
     registrations: 'registrations'
   }
