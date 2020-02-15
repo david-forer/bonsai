@@ -1,5 +1,16 @@
-<%= simple_form_for([@bonsai, @bonsai.reviews.build]) do |f| %>
-    <%= f.input :rating %>
+<%= simple_form_for([@bonsai, @review]) do |f| %>
+    
+    <div id="rating-form">
+        <label>Rating</label>
+        <%= f.input :rating %>
+    </div>
     <%= f.input :comment %>
     <%= f.button :submit %>
 <% end %>
+
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+</script>

@@ -24,17 +24,24 @@
                         <%= image_tag(@bonsai.image_url(:main)) %>
                     <% end %>
                     </div>
-                        <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
-                    <div>
-
+                    
+                    <div class="review-space">
+                        <h3 class="subtitle is-4">Reviews:</h3>
+                        <%= render @bonsai.reviews %>
                     </div>
-                <% if @cart.include?(@bonsai) %>
-                <p>Bonsai is in Cart.</p>
-                <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
-                <% else %>
-                <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post,  class: 'button is-large is-warning add-to-cart' %>
-                <% end %>
-                
+                    
+                    <div class="add-review">
+                        <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
+                    </div>
+                    
+                    <div>
+                        <% if @cart.include?(@bonsai) %>
+                            <p>Bonsai is in Cart.</p>
+                            <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
+                        <% else %>
+                            <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post,  class: 'button is-large is-warning add-to-cart' %>
+                        <% end %>
+                    </div>
                 <!-- <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post  %> -->
             </div>
         </div>
@@ -49,3 +56,23 @@
     
 </section>
 
+<script>
+    $('.review-rating').raty({
+        readOnly: true,
+        score: function () {
+            return $(this).attr('data-score');
+        },
+        path: '/assets/'
+    });
+</script>
+
+
+<!-- <script>
+    $('.average-review-rating').raty({
+        readOnly: true,
+        path: '/assets/',
+        score: function () {
+            return $(this).attr('data-score')
+        }
+    });
+</script> -->

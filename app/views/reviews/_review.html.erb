@@ -1,0 +1,20 @@
+
+<div class="review-block">
+<!-- <p> <%= review.rating %></p> -->
+<div class="review-rating" data-score="<%= review.rating %>"></div>
+<p> <%= review.comment %></p>
+</div>
+<% if user_signed_in? %>
+
+    <% if review.user_id == current_user.id %>
+        <%= link_to "Edit", edit_bonsai_review_path(review.bonsai, review) %> | 
+        <%= link_to "Delete", bonsai_review_path(review.bonsai, review), method: :delete, data: {confirm: "Are You Sure?"} %>
+    <% end %>
+<% end %>
+<!-- 
+<script>
+    $('#rating-form').raty({
+        path: '/assets/',
+        scoreName: 'review[rating]'
+    });
+</script> -->

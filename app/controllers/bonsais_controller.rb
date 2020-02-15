@@ -40,7 +40,7 @@ class BonsaisController < ApplicationController
 
     def update 
         respond_to do |format|
-            if @bonsai.save
+            if @bonsai.update(bonsai_params)
                 format.html { redirect_to @bonsai, notice: 'Your Bonsai was successfully updated.' }
                 format.json { render :show, status: :created, location: @bonsai }
             else

@@ -1,22 +1,43 @@
 class ReviewsController < ApplicationController
-before_action :find_bonsai
-
+    before_action :set_review, only: [:show, :edit, :update, :destroy]
+    before_action :set_bonsai
+    # before_action :authenticate_user!
 
     def new 
         @review = Review.new
-        @user = User.new
+        # @user = User.new
     end
+    def edit 
+
+    end 
 
     def create 
         @review = Review.new(review_params)
         @review.bonsai_id = @bonsai.id
-        # @review.user_id = current_user.id
+        @review.user_id = current_user.id
 
         if @review.save
-            redirect_to review_bonsai_path(@bonsai)
+            redirect_to @bonsai
         else
-            redirect_to root_path
+            render 'new'
         end
+    end
+
+    def update 
+        @review.update(review_params)
+    end
+
+    def update 
+        if @review.update(review_params)
+            redirect_to @bonsai
+        else 
+            render 'edit'
+        end
+    end
+
+    def destroy 
+        @review.destroy
+        redirect_to book_path(@book)
     end
 
 private
@@ -24,8 +45,11 @@ private
     def review_params
         params.require(:review).permit(:rating, :comment)
     end
-    def find_bonsai
+    def set_bonsai
         @bonsai = Bonsai.find(params[:bonsai_id])
+    end
+    def set_review
+      @review = Review.find(params[:id])
     end
 
 end
