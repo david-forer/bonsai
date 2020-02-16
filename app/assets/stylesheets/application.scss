@@ -26,6 +26,26 @@
   margin-bottom: 0;
 }
 
+.simple_form div.input {
+  margin-bottom: 20px;
+  clear: both; /* Required for Webkit, but not for Gecko */
+}
+
+.simple_form label {
+  float: left;
+  width: 100px;
+  text-align: right;
+  margin: 2px 10px;
+}
+
+.field-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  height: 15em;
+}
+
 .review-space {
     border-style: solid;
     border-color: aliceblue;
@@ -47,6 +67,31 @@
   color: black;
   padding: 25px;
 }
+.edit-review-form {
+  // text-indent: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  height: 15em;
+}
+.control-images {
+  margin-top: 20px;
+}
+.hero-class {
+  padding-bottom: 25px;
+
+}
+#accordion_first {
+  width: 75%;
+  margin: auto;
+}
+
+
+// The bonsai show template
+
 .bonsai-index-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(240px, 1fr));

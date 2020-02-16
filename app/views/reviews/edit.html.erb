@@ -1,24 +1,14 @@
-<h1>Editing review</h1>
+<h1 class="title">Editing Review</h1>
+<h4 class="subtitle is-4"><strong>Bonsai your Editing:</strong> <%= @bonsai.name %></h4>
 
 <div class="edit-review-form">
 
-    
-
     <%= simple_form_for([@bonsai, @review]) do |f| %>
-    <div id="rating-form">
-        <label>Rating</label>
-    </div>
-    <%= f.input :comment %>
-    <%= f.button :submit, :class => "btn-custom2" %>
+    <%= f.input :rating %>
+    <%= f.input :comment, as: :text, :input_html => { :cols => 75, :rows => 2 } %>
+    <%= f.button :submit, :class => "button is-warning" %>
     <% end %>
 
 </div>
+<div><%= link_to 'Back', bonsai_path(@bonsai) %></div>
 
-<%= link_to 'Back', bonsai_path(@bonsai) %>
-
-<script>
-    $('#rating-form').raty({
-        path: '/assets/',
-        scoreName: 'review[rating]'
-    });
-</script>

@@ -1,3 +1,4 @@
+
 <div class="columns">
     <div class="column is-8 is-centered">
 
@@ -6,13 +7,13 @@
 
         <div class="columns">
 
-            <div class="field column is-6">
+            <div class="column is-6">
                 <div class="control">
                     <%= f.input :name, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
                 </div>
             </div>
 
-            <div class="field column">
+            <div class="column">
                 <div class="control">
                     <%= f.input :price, required: true, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
                 </div>
@@ -26,15 +27,15 @@
 
         </div>
 
-        <div class="field">
+        <div class="column">
             <div class="control">
                 <%= f.input :description, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
             </div>
         </div>
 
         <div class="field">
-            <!-- <div class="field column is-8"> -->
-            <div class="control">
+            <div class="field column is-8">
+            <div class="field is-horizontal">
                 <label class="label">Bonsai Type</label>
                 <div class="control has-icons-left">
                     <span class="select">
@@ -47,15 +48,20 @@
             </div>
         </div>
 
-        <div class="field">
-            <div class="control">
-                <label class="label">Add images</label>
+        <div class="file has-name is-fullwidth">
+            <div class="control-images">
+                <label class="label">Add Image</label>
                 <div class="file">
                     <label class="file-label">
                         <%= f.input :image, as: :file, input_html: { class:"file-input bonsai-image" }, label: false, wrapper: false %>
                         <span class="file-cta">
                             <span class="file-icon"><i class="fa fa-upload"></i></span>
-                            <span class="file-label">Choose a file…</span>
+                            <span class="file-label">
+                                Choose a File…..
+                            </span>
+                        </span>
+                        <span class="file-name">
+                            bonsai-picture.png
                         </span>
                     </label>
                 </div>
@@ -64,7 +70,7 @@
         <output id="list"></output>
         <hr />
 
-        <div class="field column">
+        <div class="column">
             <div class="control">
                 <%= f.button :submit, class: 'button is-success' %>
                 <%= link_to 'Cancel', bonsais_path, class:'button is-light' %>
