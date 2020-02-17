@@ -13,7 +13,7 @@ class Cart < ApplicationRecord
     end
 
     def total_price 
-        bonsai_items.to_a.sum {|item| item.total_price}
+        bonsai.price.to_a.sum {|item| item.total_price}
     end
 
 end

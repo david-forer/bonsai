@@ -5,9 +5,11 @@
     </summary>
     <ul>
         <% @cart.each do |bonsai| %>
-        <li><%= bonsai.name %> - <%= link_to 'remove from cart', remove_from_cart_path(bonsai), method: :delete %></li>
+        <li><%= bonsai.name %> | <%= bonsai.price %>  | <%= link_to 'remove from cart', remove_from_cart_path(bonsai), method: :delete %></li>
+        <li> </li>
         <% end %>
     </ul>
+    <!--  -->
 
 </details>
 </div>
