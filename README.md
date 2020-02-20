@@ -1,24 +1,41 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app that is built with Ruby on Rails. It is designed as an ecommerce type site that you can sell, buy and review Bonsai plants. Users can browse the different bonsais and learn about them and how to take care of them.
 
-Things you may want to cover:
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* Ruby version
+## Installation
 
-* System dependencies
+1. Clone this repo.
+2. Install dependences:
+```
+    $ bundle install
+```
+3. Create a database structure with the following command:
+```
+    $ rake db:migrate
+```
+4. Run web server:
+```
+    $ rails s 
+```
+5. Navigate to `localhost:3000` in your browser.
 
-* Configuration
+## Usage
 
-* Database creation
+Sign up then you will be able to add bonsai plants, edit plants and leave reviews.
 
-* Database initialization
+# Omniauth-Github 
+Set up a .env file in the root directory. 
+Include:
 
-* How to run the test suite
+GITHUB_KEY=YOUR_KEY 
 
-* Services (job queues, cache servers, search engines, etc.)
+GITHUB_SECRET=YOUR_SECRET_KEY
 
-* Deployment instructions
+add .env to your .gitignore file to keep your Key and Secret protected
 
-* ...
+# License:
+
+This project is available as open source under the terms of the MIT License.
