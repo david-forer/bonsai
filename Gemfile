@@ -40,6 +40,10 @@ gem 'mini_magick'
 gem 'bootsnap', '>= 1.4.2', require: false
 # needed for raty five star
 gem 'jquery-rails'
+# for third party sign in
+gem 'omniauth-github'
+# using this to hide my keys
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

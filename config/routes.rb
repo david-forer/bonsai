@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-    registrations: 'registrations'
+    registrations: 'registrations',
+    omniauth_callbacks: 'omniauth_callbacks'
   }
   get 'bonsais/add_to_cart/:id', to:'bonsais#add_to_cart', as: 'add_to_cart'
   get 'bonsais/remove_from_cart/:id', to: 'bonsais#remove_from_cart', as: 'remove_from_cart'

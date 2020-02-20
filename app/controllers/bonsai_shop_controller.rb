@@ -1,4 +1,4 @@
-class BonsaiShopController < ApplicationController
-  def index
-  end
-end
+# class BonsaiShopController < ApplicationController
+#   def index
+#   end
+# end
