@@ -18,12 +18,6 @@
                 </div>
             </div>
 
-            <!-- <div class="field column">
-                <div class="control">
-                    <%= f.input :rating, required: true, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
-                </div>
-            </div> -->
-
         </div>
 
         <div class="field">
@@ -46,8 +40,9 @@
                         <%= f.input :image, as: :file, input_html: { class:"file-input bonsai-image" }, label: false, wrapper: false %>
                         <span class="file-cta">
                             <span class="file-icon"><i class="fa fa-upload"></i></span>
-                            <span class="file-label">Choose a file…</span>
-                        </span>
+                            <span class="file-label">
+                                Choose a file…</span>
+                            </span>
                     </label>
                 </div>
             </div>
@@ -61,12 +56,13 @@
                 <%= link_to 'Cancel', bonsais_path, class:'button is-light' %>
             </div>
         </div>
-            <% if bonsai_author(@bonsai) %>
-            <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
-            <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
-            <% end %>
+            
+        <% end %>
 
+        <% if bonsai_author(@bonsai) %>
+        <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
+        <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
         <% end %>
     </div>
-
+        
 </div>

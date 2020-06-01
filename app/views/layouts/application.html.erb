@@ -8,20 +8,24 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
    
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
-    
+
+        
    
   </head>
   <body class="<%= yield (:body_class) %>">
     <% if flash.now[:notice] %>
     <div class="notification is-success global-notification">
-      <p class="notice"><%= notice %></p>
+      <p class="notice"><%= notice %></p><%= link_to "Remove", "" %>
     </div>
     <% end %>
     <% if flash[:alert] %>
     <div class="notification is-danger global-notification">
-      <p class="alert"><%= alert %></p>
+      <p class="alert"><%= alert %></p><%= link_to "Remove", "" %>
     </div>
     <% end %>
+<script>
+  $('div.notification').delay(3000).removeClass('is-active');
+</script>
 
     <nav class="navbar is-light" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">

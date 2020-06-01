@@ -34,26 +34,27 @@
                         <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
                     </div>
                     
-                    <div>
+                    <div class="columns">
+                        <div class="column">
                         <% if @cart.include?(@bonsai) %>
                             <p>Bonsai is in Cart.</p>
                             <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
                         <% else %>
                             <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post,  class: 'button is-large is-warning add-to-cart' %>
                         <% end %>
+                        </div>
+                        <div class="column">
+                            <%= link_to 'Home', root_path, class: "button is-small" %>
+                            <% if bonsai_author(@bonsai) %>
+                            <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
+                            <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+                            <% end %>
+                        </div>
                     </div>
-                <!-- <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post  %> -->
+                </div>
             </div>
-        </div>
-        
     </div>
-
-    <% if bonsai_author(@bonsai) %>
-    <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
-    <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
-    <% end %>
-
-    
+   
 </section>
 
 

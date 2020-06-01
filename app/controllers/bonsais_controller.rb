@@ -74,7 +74,7 @@ class BonsaisController < ApplicationController
     end
 
     def bonsai_params
-        params.require(:bonsai).permit(:name, :type_of, :description, :price, :rating, :image )
+        params.require(:bonsai).permit(:name, :type_of, :description, :price, :rating, :image, :user_id )
     
     end
 
