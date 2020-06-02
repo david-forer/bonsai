@@ -2,6 +2,7 @@
   "name": "bonsai_ecom",
   "private": true,
   "dependencies": {
+    "@github/details-dialog-element": "^3.1.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -10,6 +11,6 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   }
 }

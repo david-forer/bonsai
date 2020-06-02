@@ -139,17 +139,18 @@
 }
 
 details {
-  background-color: pink;
-  border: 2px solid #aaa;
+  background-color: #ffffff;
+    opacity: .9;
+  // border: .1px solid #aaa;
   border-radius: 4px;
   padding: .5em .5em 0;
-  size: 200px;
+   width: 60%;
 }
 
-details summary {
-   background: pink;
-   color: #fff;
-}
-.scc3 {
-  width: 50%;
-}
+// details summary {
+   
+//    color: #fff;
+// }
+// .scc3 {
+//   width: 50%;
+// }

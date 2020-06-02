@@ -25,6 +25,12 @@
                 <%= f.input :description, required: true, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
             </div>
         </div>
+
+        <div class="column">
+            <div class="control">
+                <%= f.hidden_field :user_id, :value => @current_user_id %>
+            </div>
+        </div>
         
         <div class="field">
             <div class="field column is-8">

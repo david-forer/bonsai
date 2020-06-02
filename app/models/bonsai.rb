@@ -16,9 +16,13 @@ class Bonsai < ApplicationRecord
 
     TYPE = %w{ Outdoor Indoor Beginner Flowering DYI }
 
-    def bonsai_total
-        bonsai.price.to_a.sum 
-    end
+    # def bonsai_total
+    #     price.to_a.sum { |bonsai| bonsai.prices}
+    # end
+
+    # def total_price 
+    #     bonsai.price.to_a.sum {|bonsai| bonsai.total_price}
+    # end
 
     private
 

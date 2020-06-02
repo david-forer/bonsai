@@ -1,7 +1,7 @@
 class BonsaisController < ApplicationController
+    before_action :authenticate_user!, except: [:index, :show]
     before_action :initialize_session
     before_action :set_bonsai, only: [:show, :edit, :update, :destroy]
-    before_action :authenticate_user!, except: [:index, :show]
     before_action :load_cart
    
 
@@ -58,6 +58,9 @@ class BonsaisController < ApplicationController
             end
     end
 
+    def totalprice
+  self.sales.sum( :price )
+end
    
 
     private

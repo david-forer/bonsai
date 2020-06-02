@@ -1,17 +1,6 @@
 <div class="pa3">
     <div class="scc3">
-        <details>
-            <summary> Shopping Cart </summary>
-            <p>
-            <ul>
-                <% @cart.each do |bonsai| %>
-                <li><%= bonsai.name %> | <%= bonsai.price %>  | <%= link_to 'remove from cart', remove_from_cart_path(bonsai), method: :delete %></li>
-                <li> </li>
-                <% end %>
-            </ul>
-            <!--  -->
-            </p>
-        </details>
+<%= render 'cart' %>
     </div>
 </div>
 <div class="bonsai-index-grid pt2">

@@ -1,0 +1,27 @@
+<details>
+    <summary> Cart </summary>
+    <table>
+        <thead>
+            <tr>
+                <th> Bonsai Plant </th>
+
+                <th>Price</th>
+                <th colspan="3"></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @cart.each do |bonsai| %>
+            <tr>
+                <td><%= bonsai.name %></td>
+                <td><%= bonsai.price %></td>
+                <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :delete %></td>
+                <% end %>
+                <h2>Subtotal: <%= Bonsai.sum(:price) %></h2>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</details>
