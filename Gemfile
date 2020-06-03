@@ -35,6 +35,9 @@ gem 'carrierwave'
 # image uploads for plants
 gem 'mini_magick'
 # Carrier wave requires this
+gem 'devise-i18n'
+gem 'devise-bulma-views'
+# Both gems added to use bulma with devise forms
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

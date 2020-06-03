@@ -95,6 +95,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bulma-views (0.1.0)
+    devise-i18n (1.9.1)
+      devise (>= 4.7.1)
     erubi (1.9.0)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
@@ -272,6 +275,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
+  devise-bulma-views
+  devise-i18n
   figaro
   jbuilder (~> 2.7)
   jquery-rails
