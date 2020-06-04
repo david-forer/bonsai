@@ -10,8 +10,7 @@ class BonsaisController < ApplicationController
     end
 
     def show 
-        # @bonsai = Bonsai.find_by_id(params[:id])
-        # redirect_to '/' if !@bonsai
+       
     end
 
     def new 
@@ -58,10 +57,7 @@ class BonsaisController < ApplicationController
             end
     end
 
-    # def totalprice
-        # self.sales.sum( :price )
-    # end
-   
+    
 
     private
 

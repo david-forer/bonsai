@@ -20,5 +20,5 @@ require("packs/jquery.raty")
 // const imagePath = (name) => images(name, true)
 
 import './global.js'
-import '@github/details-dialog-element'
+
 

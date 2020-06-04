@@ -15,9 +15,9 @@
             <tr>
                 <td><%= bonsai.name %></td>
                 <td><%= bonsai.price %></td>
-                <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :delete %></td>
+                <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :get %></td>
                 <% end %>
-                <h2>Subtotal: <%= Bonsai.sum(:price) %></h2>
+                
                 </td>
 
             </tr>

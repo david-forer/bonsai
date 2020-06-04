@@ -36,7 +36,7 @@
                 <div class="navbar-dropdown is-right">
                     <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
 
-                    <%= link_to destroy_user_session_path, :method => :get do %>Log out<% end %>
+                <%= link_to destroy_user_session_path, class:"navbar-item", :method => :get do %> Log Out!! <% end %>
 
                 </div>
             </div>
@@ -58,4 +58,4 @@
     </div>
     </div>
     </div>
-</nav> 
+</nav>

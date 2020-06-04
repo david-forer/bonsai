@@ -23,20 +23,16 @@
                         <tr>
                             <td><%= bonsai.name %></td>
                             <td><%= bonsai.price %></td>
-                            <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :delete %></td>
+                            <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :get %></td>
                             <% end %>
                 
                             </td>
                 
                         </tr>
-                        <!-- <h2>Subtotal: <%= Bonsai.sum(:price) %></h2> -->
+                        
                     </tbody>
                 </table>
 
-            <!-- </div> -->
-            <!-- <div class="Box-footer">
-                <button type="button" class="btn btn-block" data-close-dialog>Close</button>
-            </div> -->
         </div>
     </details-dialog>
 </details>

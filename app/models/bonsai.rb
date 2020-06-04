@@ -1,10 +1,10 @@
 class Bonsai < ApplicationRecord
-    before_destroy :not_referenced_by_any_bonsai_item
+    # before_destroy :not_referenced_by_any_bonsai_item
     
     mount_uploader :image, ImageUploader
     serialize :image, JSON
 
-    has_many :reviews
+    has_many :reviews, dependent: :delete_all
     has_many :users, through: :reviews
 
     belongs_to :user, optional: true
@@ -16,13 +16,6 @@ class Bonsai < ApplicationRecord
 
     TYPE = %w{ Outdoor Indoor Beginner Flowering DYI }
 
-    # def bonsai_total
-    #     price.to_a.sum { |bonsai| bonsai.prices}
-    # end
-
-    # def total_price 
-    #     bonsai.price.to_a.sum {|bonsai| bonsai.total_price}
-    # end
 
     private
 

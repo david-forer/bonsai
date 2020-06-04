@@ -6,56 +6,53 @@
             <h1 class="title is-2"><%= @bonsai.name %></h1>
 
             <div class="content pa4 mt3 bg-white border-radius-3">
-            
+
                 <h3 class="subtitle is-4">Type of Bonsai:</h3>
                 <%= @bonsai.type_of %>
 
                 <h3 class="subtitle is-4">Price of Bonsai:</h3>
                 <%= @bonsai.price %>
-         
-            <!-- <div class="content pa4 mt3 bg-white border-radius-3"> -->
+
+                <!-- <div class="content pa4 mt3 bg-white border-radius-3"> -->
 
                 <h3 class="subtitle is-4">Description:</h3>
                 <%= @bonsai.description %>
 
-                
-                    <div class="feature-image">
+
+                <div class="feature-image">
                     <% if @bonsai.image_url %>
-                        <%= image_tag(@bonsai.image_url(:main)) %>
+                    <%= image_tag(@bonsai.image_url(:main)) %>
                     <% end %>
-                    </div>
-                    
-                    <div class="review-space">
-                        <h3 class="subtitle is-4">Reviews:</h3>
-                        <%= render @bonsai.reviews %>
-                    </div>
-                    
-                    <div class="add-review">
-                        <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
-                    </div>
-                    
-                    <div class="columns">
-                        <div class="column">
+                </div>
+
+                <div class="review-space">
+                    <h3 class="subtitle is-4">Reviews:</h3>
+                    <%= render @bonsai.reviews %>
+                </div>
+
+                <div class="add-review">
+                    <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
+                </div>
+
+                <div class="columns">
+                    <div class="column">
                         <% if @cart.include?(@bonsai) %>
-                            <p>Bonsai is in Cart.</p>
-                            <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
+                        <p>Bonsai is in Cart.</p>
+                        <!-- <p> <%= link_to 'remove from cart', remove_from_cart_path(@bonsai),  method: :get %> </p> -->
                         <% else %>
-                            <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :post,  class: 'button is-large is-warning add-to-cart' %>
+                        <%= link_to 'Add to Cart', add_to_cart_path(@bonsai.id), method: :get,  class: 'button is-large is-warning add-to-cart' %>
                         <% end %>
-                        </div>
-                        <div class="column">
-                            <%= link_to 'Home', root_path, class: "button is-small" %>
-                            <% if bonsai_author(@bonsai) %>
-                            <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
-                            <%= link_to 'Delete', bonsai_url(@bonsai.id), method: :delete, :onclick => "return confirm('Are you sure you want to delete this Bonsai?')", class: "button is-small" %>
-                            <% end %>
-                        </div>
+                    </div>
+                    <div class="column">
+                        <%= link_to 'Home', root_path, class: "button is-small" %>
+                        <% if bonsai_author(@bonsai) %>
+                        <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
+                        <%= link_to 'Destroy', bonsai_path(@bonsai), method: :delete, class: "button is-small" %>
+                        <% end %>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-   
+
 </section>
-
-
-
