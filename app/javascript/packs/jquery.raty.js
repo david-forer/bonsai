@@ -9,7 +9,7 @@
  *
  */
 
-(function($) {
+/*!(function($) {
   'use strict';
 
   var methods = {
@@ -760,4 +760,6 @@
     targetText:   '',
     targetType:   'hint'
   };
-})(jQuery);
+})(jQuery);*/
+
+
