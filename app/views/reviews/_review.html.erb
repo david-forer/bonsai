@@ -8,8 +8,7 @@
 <% if user_signed_in? %>
 
     <% if review.user_id == current_user.id %>
-        <%= link_to "Edit", edit_bonsai_review_path(review.bonsai, review) %> | 
-        <%= link_to "Delete", bonsai_review_path(review.bonsai, review), method: :delete, data: {confirm: "Are You Sure?"} %>
+        <%= link_to "Edit", edit_bonsai_review_path(review.bonsai, review) %>
     <% end %>
 <% end %>
 </div>
