@@ -6,7 +6,7 @@
         
         <div class="columns">
         
-            <div class="column is-6">
+            <div class="field column is-6">
                 <div class="control">
                     <%= f.input :name, required: true, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
                 </div>
@@ -28,7 +28,7 @@
 
         <div class="column">
             <div class="control">
-                <%= f.hidden_field :user_id, :value => @current_user_id %>
+                <%= f.hidden_field :user_id, :value => current_user.id %>
             </div>
         </div>
         
@@ -66,15 +66,15 @@
                     </div>
                 </div>
             </div>
-            <output id="list"></output>
+        
             <hr />
         
             <div class="column">
                 <div class="control">
-                    <%= f.button :submit, class: 'button is-success' %>
+                    <%= f.button :submit, class: 'button is-success', :user_id => session[:user_id] %>
                     <%= link_to 'Cancel', bonsais_path, class:'button is-light' %>
                 </div>
-            </div>
+            </div> 
         
             <% end %>
 

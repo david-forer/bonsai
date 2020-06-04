@@ -53,14 +53,14 @@ class BonsaisController < ApplicationController
     def destroy
         @bonsai.destroy
             respond_to do |format|
-            format.html { redirect_to bonsais_url, notice: 'Bonsai was successfully repotted elsewhere.' }
+            format.html { redirect_to root_path, notice: 'Bonsai was successfully repotted elsewhere.' }
             format.json { head :no_content }
             end
     end
 
-    def totalprice
-  self.sales.sum( :price )
-end
+    # def totalprice
+        # self.sales.sum( :price )
+    # end
    
 
     private

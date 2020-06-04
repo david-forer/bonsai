@@ -8,7 +8,7 @@ class Bonsai < ApplicationRecord
     has_many :users, through: :reviews
 
     belongs_to :user, optional: true
-    has_many :bonsai_items
+    # has_many :bonsai_items
 
     validates :name, :type_of, :price, presence: true
     validates :description, length: {maximum: 1000, too_long: "%{count} characters is the maximum allowed. "}

@@ -23,9 +23,7 @@ class ReviewsController < ApplicationController
         end
     end
 
-    def update 
-        @review.update(review_params)
-    end
+
 
     def update 
         if @review.update(review_params)
@@ -37,7 +35,7 @@ class ReviewsController < ApplicationController
 
     def destroy 
         @review.destroy
-        redirect_to book_path(@book)
+        redirect_to bonsai_path
     end
 
 private

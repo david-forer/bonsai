@@ -47,22 +47,25 @@
                 </div>
             </div>
         </div>
-        <output id="list"></output>
+        
         <hr />
-
-        <div class="field column">
-            <div class="control">
-                <%= f.button :submit, class: 'button is-success' %>
-                <%= link_to 'Cancel', bonsais_path, class:'button is-light' %>
+        <div class="columns">
+            
+            <div class="column">
+                <div class="control">
+                    <%= f.button :submit, class: 'button is-success' %>
+                    <%= link_to 'Cancel', bonsais_path, class:'button is-light' %>
+                </div>
+                <% end %>
             </div>
+             <!-- <div class="column"> -->
+                <!-- <% if bonsai_author(@bonsai) %> -->
+                <!-- <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %> -->
+                <!-- <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %> -->
+                <!-- <% end %> -->
+            <!-- </div> -->
         </div>
             
-        <% end %>
-
-        <% if bonsai_author(@bonsai) %>
-        <%= link_to 'Edit', edit_bonsai_path(@bonsai), class: "button is-small" %>
-        <%= link_to 'Delete', @bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
-        <% end %>
     </div>
         
 </div>
