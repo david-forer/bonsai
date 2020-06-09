@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     registrations: 'registrations',
     omniauth_callbacks: 'omniauth_callbacks'
   }
+  devise_scope :user do
+    get "registrations/user_profile" => "registrations#user_profile"
+  end
+  # get 'registrations/user_profile', to:'registrations#user_profile', as: 'user_profile'
   get 'bonsais/cart', to:'bonsais#cart_path', as: 'cart_path'
   get 'bonsais/add_to_cart/:id', to:'bonsais#add_to_cart', as: 'add_to_cart'
   get 'bonsais/remove_from_cart/:id', to: 'bonsais#remove_from_cart', as: 'remove_from_cart'

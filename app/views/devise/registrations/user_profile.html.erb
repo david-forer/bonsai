@@ -1,0 +1,27 @@
+<p>Hello, <%= current_user.name %>, here are your reviews.</p></p>
+
+
+<br>
+
+<table class="table is-bordered is-striped is-narrow is-hoverable is-large">
+
+    <thead>
+        <tr>
+            <th>Rating </th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% @reviews.each do |review| %>
+        <tr>
+            <td><%= review.rating %></td>
+            <td><%= review.comment %></td>
+
+            <% end %>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+<h2><%= link_to "Go Back", :back %></h2>

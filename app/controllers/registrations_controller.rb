@@ -1,5 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
+
+    def user_profile 
+        @reviews = current_user.reviews
+    end
+
  
  
  private
