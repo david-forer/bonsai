@@ -16,6 +16,15 @@ class Bonsai < ApplicationRecord
 
     TYPE = %w{ Outdoor Indoor Beginner Flowering DYI }
 
+     # added scopes to differentiate bonsai types
+    scope :bonsai_type, -> (plant_type) { where("type_of = ?", plant_type).limit(4) }
+
+    # Individual Scopes
+    # scope :bonsai_indoor, -> {where(type_of: "Indoor")}
+    # scope :bonsai_outdoor, -> {where(type_of: "Outdoor")}
+
+    scope :new_first, -> { order(created_at: :desc) }
+
 
     private
 

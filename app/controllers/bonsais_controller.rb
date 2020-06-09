@@ -6,7 +6,7 @@ class BonsaisController < ApplicationController
    
 
     def index 
-        @bonsais = Bonsai.all.order("created_at desc")
+        @bonsais = Bonsai.all.new_first
     end
 
     def show 

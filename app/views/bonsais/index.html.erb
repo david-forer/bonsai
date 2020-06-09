@@ -1,39 +1,154 @@
 <div class="pa3">
     <div class="scc3">
-<%= render 'cart' %>
+        <%= render 'layouts/cart' %>
     </div>
 </div>
-<div class="bonsai-index-grid pt2">
-    <% @bonsais.each do |bonsai| %>
+<div class="block">
+    <h3 class="title is-3">Indoor Bonsai</h3>
+    <div class="bonsai-index-grid pt2 ">
+        <% @bonsais.bonsai_type('Indoor').each do |bonsai| %>
 
-    <div class="bonsai border-light">
-        <div class="bonsai-thumb">
-            
+        <div class="bonsai border-light">
+            <div class="bonsai-thumb">
+
                 <%= link_to image_tag(bonsai.image_url(:thumb)), bonsai %>
-           
+
                 <div class="type_of">
-                        <span class="tag is-dark"><%= bonsai.type_of %></span>
+                    <span class="tag is-dark"><%= bonsai.type_of %></span>
                 </div>
-            
+
+            </div>
+
+            <div class="pa3">
+
+                <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
+
+
+                <p class="has-text-gray fg pt1">Sold by: <%= bonsai.user.name %></p>
+
+                <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
+
+
+
+                <% if bonsai_author(bonsai) %>
+                <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
+                <!-- <%= link_to 'Delete', bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %> -->
+                <% end %>
+
+            </div>
         </div>
-
-        <div class="pa3">
-
-            <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
-
-            
-            <p class="has-text-gray fg pt1">Sold by: <%= bonsai.user.name %></p>
-
-            <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
-
-            
-
-            <% if bonsai_author(bonsai) %>
-            <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
-            
-            <% end %>
-
-        </div>
+        <% end %>
     </div>
-    <% end %>
+</div>
+<div class="block">
+    <h3 class="title is-3">Outdoor Bonsai</h3>
+    <div class="bonsai-index-grid pt2 ">
+        <% @bonsais.bonsai_type('Outdoor').each do |bonsai| %>
+
+        <div class="bonsai border-light">
+            <div class="bonsai-thumb">
+
+                <%= link_to image_tag(bonsai.image_url(:thumb)), bonsai %>
+
+                <div class="type_of">
+                    <span class="tag is-dark"><%= bonsai.type_of %></span>
+                </div>
+
+            </div>
+
+            <div class="pa3">
+
+                <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
+
+
+                <p class="has-text-gray fg pt1">Sold by: <%= bonsai.user.name %></p>
+
+                <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
+
+
+
+                <% if bonsai_author(bonsai) %>
+                <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
+                <!-- <%= link_to 'Delete', bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %> -->
+                <% end %>
+
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+<div class="block">
+    <h3 class="title is-3">Beginner Bonsai</h3>
+    <div class="bonsai-index-grid pt2 ">
+        <% @bonsais.bonsai_type('Beginner').each do |bonsai| %>
+
+        <div class="bonsai border-light">
+            <div class="bonsai-thumb">
+
+                <%= link_to image_tag(bonsai.image_url(:thumb)), bonsai %>
+
+                <div class="type_of">
+                    <span class="tag is-dark"><%= bonsai.type_of %></span>
+                </div>
+
+            </div>
+
+            <div class="pa3">
+
+                <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
+
+
+                <p class="has-text-gray fg pt1">Sold by: <%= bonsai.user.name %></p>
+
+                <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
+
+
+
+                <% if bonsai_author(bonsai) %>
+                <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
+                <!-- <%= link_to 'Delete', bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %> -->
+                <% end %>
+
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<div class="block">
+    <h3 class="title is-3">Flowering Bonsai</h3>
+    <div class="bonsai-index-grid pt2 ">
+        <% @bonsais.bonsai_type('Flowering').each do |bonsai| %>
+
+        <div class="bonsai border-light">
+            <div class="bonsai-thumb">
+
+                <%= link_to image_tag(bonsai.image_url(:thumb)), bonsai %>
+
+                <div class="type_of">
+                    <span class="tag is-dark"><%= bonsai.type_of %></span>
+                </div>
+
+            </div>
+
+            <div class="pa3">
+
+                <h3 class="fw7 f4 title"><%= link_to bonsai.name, bonsai %></h3>
+
+
+                <p class="has-text-gray fg pt1">Sold by: <%= bonsai.user.name %></p>
+
+                <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(bonsai.price) %></p>
+
+
+
+                <% if bonsai_author(bonsai) %>
+                <%= link_to 'Edit', edit_bonsai_path(bonsai), class: "button is-small" %>
+                <!-- <%= link_to 'Delete', bonsai, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %> -->
+                <% end %>
+
+            </div>
+        </div>
+        <% end %>
+    </div>
 </div>

@@ -3,7 +3,7 @@
 <section class="section instrument-show">
     <div class="columns">
         <div class="column is-8">
-            <h1 class="title is-2"><%= @bonsai.name %></h1>
+            <h3 class="title "><%= @bonsai.name %></h3>
 
             <div class="content pa4 mt3 bg-white border-radius-3">
 
@@ -27,11 +27,19 @@
 
                 <div class="review-space">
                     <h3 class="subtitle is-4">Reviews:</h3>
-                    <%= render @bonsai.reviews %>
+                    <%= render @bonsai.reviews.positive %>
                 </div>
-
-                <div class="add-review">
-                    <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
+                <div class="columns">
+                    <div class="column">
+                        <div class="add-review">
+                            <%= link_to "Add Review", new_bonsai_review_path(@bonsai) %>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="add-review">
+                            <%= link_to "See All Reviews", bonsai_reviews_path(@bonsai) %>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="columns">

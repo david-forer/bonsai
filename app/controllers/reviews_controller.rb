@@ -5,11 +5,19 @@ class ReviewsController < ApplicationController
 
     def new 
         @review = Review.new
-       
     end
+
     def edit 
 
     end 
+
+    def show 
+
+    end
+
+    def index
+        @reviews = Review.all
+    end
 
     def create 
         @review = Review.new(review_params)
@@ -22,8 +30,6 @@ class ReviewsController < ApplicationController
             render 'new'
         end
     end
-
-
 
     def update 
         if @review.update(review_params)

@@ -1,0 +1,38 @@
+<!-- Bonsai reviews for: <h1 class="title is-2"><%= @bonsai.name %></h1> -->
+
+<!-- <div class="review-space">
+    <h3 class="subtitle is-4">Reviews:</h3>
+    <%= render @bonsai.reviews %>
+</div> -->
+
+<div class="container">
+    <div class="notification">
+
+        Bonsia Reviews for : <h2 class="title is-3"><%= @bonsai.name %></h2>
+        <br>
+        <div class="columns is-multiline is-centered">
+
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-large">
+
+                <thead>
+                    <tr>
+                        <th>Rating </th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% @bonsai.reviews.each do |review| %>
+                    <tr>
+                        <td><%= review.rating %></td>
+                        <td><%= review.comment %></td>
+
+                        <% end %>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <h2><%= link_to "Go Back", :back %></h2>
+    </div>
+</div>

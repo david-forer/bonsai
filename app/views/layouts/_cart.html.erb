@@ -1,27 +1,42 @@
-<details>
-    <summary> Cart </summary>
-    <table>
-        <thead>
-            <tr>
-                <th> Bonsai Plant </th>
+<details class="details-reset details-with-dialog mt-4">
+    <summary class="button is-black">Cart</summary>
+    <details-dialog class="details-dialog anim-fade-in fast wide" aria-label="Dialog">
+        <div class="Box d-flex flex-column">
+            <br>
+            <div class="box-header">
+                Cart Details
+            </div>
+            <br>
+            <!-- <div class="Box-body overflow-auto"> -->
+            <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th> Bonsai Plant </th>
 
-                <th>Price</th>
-                <th colspan="3"></th>
-            </tr>
-        </thead>
+                        <th>Price</th>
+                        <th colspan="3"></th>
+                    </tr>
+                </thead>
 
-        <tbody>
-            <% @cart.each do |bonsai| %>
-            <tr>
-                <td><%= bonsai.name %></td>
-                <td><%= bonsai.price %></td>
-                <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :get %></td>
-                <% end %>
-                
-                </td>
+                <tbody>
+                    <% @cart.each do |bonsai| %>
+                    <tr>
+                        <td><%= bonsai.name %></td>
+                        <td><%= bonsai.price %></td>
+                        <td><%= link_to 'Remove Bonsai', remove_from_cart_path(bonsai), method: :get %></td>
+                        <% end %>
 
-            </tr>
+                        </td>
 
-        </tbody>
-    </table>
+                    </tr>
+                    <!-- <h2>Subtotal: <%= Bonsai.sum(:price) %></h2> -->
+                </tbody>
+            </table>
+
+            <!-- </div> -->
+            <!-- <div class="Box-footer">
+                <button type="button" class="btn btn-block" data-close-dialog>Close</button>
+            </div> -->
+        </div>
+    </details-dialog>
 </details>
